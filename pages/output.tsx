@@ -1,5 +1,4 @@
-// pages/output.tsx
-
+"use client";
 import React from "react";
 import Layout from "../components/Layout";
 import styles from "../styles/Output.module.css";
@@ -26,7 +25,6 @@ ChartJS.register(
   Legend,
 );
 
-// Datos simulados para la tabla
 const data = [
   { fecha: "2025-04-01", ventas: 120 },
   { fecha: "2025-04-02", ventas: 150 },
@@ -35,19 +33,11 @@ const data = [
   { fecha: "2025-04-05", ventas: 200 },
 ];
 
-// Definición de columnas para react-table
-const columns: Column<{ fecha: string; ventas: number }>[] = [
-  {
-    Header: "Fecha",
-    accessor: "fecha",
-  },
-  {
-    Header: "Ventas",
-    accessor: "ventas",
-  },
+const columns: Column<(typeof data)[0]>[] = [
+  { Header: "Fecha", accessor: "fecha" },
+  { Header: "Ventas", accessor: "ventas" },
 ];
 
-// Datos para el gráfico
 const chartData = {
   labels: data.map((d) => d.fecha),
   datasets: [
@@ -55,8 +45,8 @@ const chartData = {
       label: "Ventas",
       data: data.map((d) => d.ventas),
       fill: false,
-      borderColor: "#008AFF",
-      backgroundColor: "#90D5FF",
+      borderColor: "var(--color-primary)",
+      backgroundColor: "var(--color-border)",
       tension: 0.1,
     },
   ],
@@ -65,46 +55,27 @@ const chartData = {
 const chartOptions = {
   responsive: true,
   plugins: {
-    legend: {
-      position: "top" as const,
-    },
-    title: {
-      display: true,
-      text: "Ventas Diarias",
-    },
+    legend: { position: "top" as const },
+    title: { display: true, text: "Ventas Diarias" },
   },
 };
 
-const OutputPage = () => {
-  const tableInstance = useTable({ columns, data });
-
+export default function OutputPage() {
+  const table = useTable({ columns, data });
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    tableInstance;
+    table;
 
   return (
     <Layout>
       <div className={styles.outputContainer}>
         <div className={styles.tableContainer}>
-          <table
-            {...getTableProps()}
-            style={{ width: "100%", borderCollapse: "collapse" }}
-          >
+          <table {...getTableProps()}>
             <thead>
-              {headerGroups.map((headerGroup) => (
-                <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>
-                  {headerGroup.headers.map((column) => (
-                    <th
-                      {...column.getHeaderProps()}
-                      key={column.id}
-                      style={{
-                        borderBottom: "1px solid #ddd",
-                        background: "#90D5FF",
-                        color: "white",
-                        padding: "0.5rem",
-                        textAlign: "left",
-                      }}
-                    >
-                      {column.render("Header")}
+              {headerGroups.map((hg) => (
+                <tr {...hg.getHeaderGroupProps()} key={hg.id}>
+                  {hg.headers.map((col) => (
+                    <th {...col.getHeaderProps()} key={col.id}>
+                      {col.render("Header")}
                     </th>
                   ))}
                 </tr>
@@ -116,14 +87,7 @@ const OutputPage = () => {
                 return (
                   <tr {...row.getRowProps()} key={row.id}>
                     {row.cells.map((cell) => (
-                      <td
-                        {...cell.getCellProps()}
-                        key={cell.column.id}
-                        style={{
-                          padding: "0.5rem",
-                          borderBottom: "1px solid #ddd",
-                        }}
-                      >
+                      <td {...cell.getCellProps()} key={cell.column.id}>
                         {cell.render("Cell")}
                       </td>
                     ))}
@@ -139,6 +103,4 @@ const OutputPage = () => {
       </div>
     </Layout>
   );
-};
-
-export default OutputPage;
+}

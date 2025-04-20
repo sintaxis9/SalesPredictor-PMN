@@ -5,27 +5,31 @@ import Link from "next/link";
 export default function Register() {
   return (
     <Layout>
-      <h2>Register (Maqueta)</h2>
-      <form>
+      <div className={styles.formContainer}>
+        <h2>Register</h2>
         <div className={styles.inputGroup}>
-          <label className={styles.label}>Name</label>
-          <input type="text" className={styles.input} />
+          <label className={styles.label} htmlFor="name">
+            Name
+          </label>
+          <input id="name" type="text" className={styles.input} />
         </div>
         <div className={styles.inputGroup}>
-          <label className={styles.label}>Email</label>
-          <input type="email" className={styles.input} />
+          <label className={styles.label} htmlFor="email">
+            Email
+          </label>
+          <input id="email" type="email" className={styles.input} />
         </div>
         <div className={styles.inputGroup}>
-          <label className={styles.label}>Password</label>
-          <input type="password" className={styles.input} />
+          <label className={styles.label} htmlFor="password">
+            Password
+          </label>
+          <input id="password" type="password" className={styles.input} />
         </div>
-        <button type="submit" className={`${styles.button} button-secondary`}>
-          Register
-        </button>
-      </form>
-      <p>
-        ¿Ya tienes cuenta? <Link href="/login">Login</Link>
-      </p>
+        <button className={styles.button}>Register</button>
+        <p>
+          ¿Ya tienes cuenta? <Link href="/login">Login</Link>
+        </p>
+      </div>
     </Layout>
   );
 }

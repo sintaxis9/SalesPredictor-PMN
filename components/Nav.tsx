@@ -1,26 +1,17 @@
-// components/Nav.tsx
-
 import Link from "next/link";
 import styles from "../styles/Nav.module.css";
 
-const Nav = () => (
-  <nav className={styles.navbar}>
-    <div>SalesPredictorPMN</div>
-    <div>
-      <Link href="/login" className={styles.navLink}>
-        Login
-      </Link>
-      <Link href="/register" className={styles.navLink}>
-        Register
-      </Link>
-      <Link href="/data-entry" className={styles.navLink}>
-        Data Entry
-      </Link>
-      <Link href="/output" className={styles.navLink}>
-        Output
-      </Link>
-    </div>
-  </nav>
-);
-
-export default Nav;
+export default function Nav() {
+  return (
+    <nav className={styles.navbar}>
+      <h1>SalesPredictorPMN</h1>
+      <div className={styles.navLinks}>
+        {["login", "register", "data-entry", "output"].map((path) => (
+          <Link key={path} href={`/${path}`} className={styles.navLink}>
+            {path.replace("-", " ").toUpperCase()}
+          </Link>
+        ))}
+      </div>
+    </nav>
+  );
+}

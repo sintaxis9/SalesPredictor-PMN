@@ -1,18 +1,20 @@
 .navbar {
-    background-color: #90d5ff;
-    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 2rem;
+    background: var(--color-primary);
+    box-shadow: var(--shadow);
 }
-
+.navLinks {
+    display: flex;
+}
 .navLink {
+    margin-left: 1.5rem;
     color: white;
-    margin-left: 1rem;
-    text-decoration: none;
     font-weight: 500;
+    transition: color 0.2s;
 }
-
 .navLink:hover {
-    text-decoration: underline;
+    color: var(--color-primary-light);
 }

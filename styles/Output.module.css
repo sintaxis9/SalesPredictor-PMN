@@ -1,25 +1,26 @@
-/* styles/Output.module.css */
-
 .outputContainer {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    padding: 2rem;
-    background-color: #f5faff;
 }
-
-.tableContainer {
-    flex: 1;
-    background-color: #ffffff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
+.tableContainer,
 .chartContainer {
-    flex: 1;
-    background-color: #ffffff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+.tableContainer table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.tableContainer th {
+    background: var(--color-border);
+    color: white;
+    padding: 0.75rem;
+    text-align: left;
+}
+.tableContainer td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
 }

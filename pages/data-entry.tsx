@@ -4,8 +4,8 @@ import styles from "../styles/Form.module.css";
 export default function DataEntry() {
   return (
     <Layout>
-      <h2>Data Entry (Maqueta)</h2>
-      <form>
+      <div className={styles.formContainer}>
+        <h2>Data Entry</h2>
         <div className={styles.inputGroup}>
           <label className={styles.label}>
             Ventas Anteriores (CSV o manual)
@@ -13,13 +13,11 @@ export default function DataEntry() {
           <textarea
             className={styles.input}
             rows={4}
-            defaultValue="fecha,ventas\n2024-01-01,100\n..."
+            defaultValue="fecha,ventas\n2025-04-01,120\n..."
           />
         </div>
-        <button type="submit" className={`${styles.button} button-success`}>
-          Enviar datos
-        </button>
-      </form>
+        <button className={styles.button}>Enviar datos</button>
+      </div>
     </Layout>
   );
 }

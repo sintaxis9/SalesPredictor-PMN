@@ -1,7 +1,9 @@
 .container {
     max-width: 960px;
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 2rem;
-    background-color: #f5faff;
-    min-height: 100vh;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    min-height: calc(100vh - 120px);
 }
