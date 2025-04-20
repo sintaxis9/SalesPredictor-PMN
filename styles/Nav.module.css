@@ -1,0 +1,13 @@
+.nav {
+    display: flex;
+    padding: 1rem;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e4e8;
+}
+.link {
+    margin-right: 1rem;
+    color: #0366d6;
+}
+.link:hover {
+    text-decoration: underline;
+}
