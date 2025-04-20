@@ -1,13 +1,18 @@
-.nav {
+.navbar {
+    background-color: #90d5ff;
+    padding: 1rem 2rem;
     display: flex;
-    padding: 1rem;
-    background: #ffffff;
-    border-bottom: 1px solid #e1e4e8;
+    justify-content: space-between;
+    align-items: center;
 }
-.link {
-    margin-right: 1rem;
-    color: #0366d6;
+
+.navLink {
+    color: white;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: 500;
 }
-.link:hover {
+
+.navLink:hover {
     text-decoration: underline;
 }

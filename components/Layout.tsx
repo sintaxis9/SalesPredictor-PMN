@@ -1,12 +1,18 @@
+// components/Layout.tsx
+
+import { ReactNode } from "react";
 import Nav from "./Nav";
 import styles from "../styles/Layout.module.css";
-import type { ReactNode } from "react";
 
-export default function Layout({ children }: { children: ReactNode }) {
-  return (
-    <>
-      <Nav />
-      <main className={styles.container}>{children}</main>
-    </>
-  );
-}
+type LayoutProps = {
+  children: ReactNode;
+};
+
+const Layout = ({ children }: LayoutProps) => (
+  <>
+    <Nav />
+    <main className={styles.container}>{children}</main>
+  </>
+);
+
+export default Layout;

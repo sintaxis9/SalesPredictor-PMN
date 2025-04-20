@@ -1,20 +1,26 @@
+// components/Nav.tsx
+
 import Link from "next/link";
 import styles from "../styles/Nav.module.css";
 
-export default function Nav() {
-  const items = [
-    { href: "/login", label: "Login" },
-    { href: "/register", label: "Register" },
-    { href: "/data-entry", label: "Data Entry" },
-    { href: "/output", label: "Output" },
-  ];
-  return (
-    <nav className={styles.nav}>
-      {items.map((i) => (
-        <Link key={i.href} href={i.href} className={styles.link}>
-          {i.label}
-        </Link>
-      ))}
-    </nav>
-  );
-}
+const Nav = () => (
+  <nav className={styles.navbar}>
+    <div>SalesPredictorPMN</div>
+    <div>
+      <Link href="/login" className={styles.navLink}>
+        Login
+      </Link>
+      <Link href="/register" className={styles.navLink}>
+        Register
+      </Link>
+      <Link href="/data-entry" className={styles.navLink}>
+        Data Entry
+      </Link>
+      <Link href="/output" className={styles.navLink}>
+        Output
+      </Link>
+    </div>
+  </nav>
+);
+
+export default Nav;

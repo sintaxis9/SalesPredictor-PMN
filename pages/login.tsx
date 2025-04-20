@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import styles from "../styles/Form.module.css";
+import styles from "../styles/Layout.module.css";
 import Link from "next/link";
 
 export default function Login() {
