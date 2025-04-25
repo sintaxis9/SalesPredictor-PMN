@@ -1,22 +1,31 @@
+import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import styles from "../styles/Form.module.css";
 
 export default function DataEntry() {
+  const router = useRouter();
+
+  const handlePredict = () => {
+    router.push("/output");
+  };
+
   return (
     <Layout>
       <div className={styles.formContainer}>
-        <h2>Data Entry</h2>
+        <h2>Carga de datos predictivos</h2>
         <div className={styles.inputGroup}>
           <label className={styles.label}>
-            Ventas Anteriores (CSV o manual)
+            Datos históricos (CSV o manual)
           </label>
           <textarea
             className={styles.input}
-            rows={4}
-            defaultValue="fecha,ventas\n2025-04-01,120\n..."
+            rows={6}
+            placeholder="Ejemplo:\nfecha,ventas\n2025-04-01,120\n2025-04-02,150"
           />
         </div>
-        <button className={styles.button}>Enviar datos</button>
+        <button className={styles.button} onClick={handlePredict}>
+          Generar predicción
+        </button>
       </div>
     </Layout>
   );

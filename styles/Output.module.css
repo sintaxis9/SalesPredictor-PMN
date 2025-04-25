@@ -1,26 +1,18 @@
-.outputContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+/* Agregar al final */
+.historicalContainer {
+    padding: 2rem;
 }
-.tableContainer,
-.chartContainer {
+
+.chartsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.chart-container {
     background: white;
     padding: 1.5rem;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-}
-.tableContainer table {
-    width: 100%;
-    border-collapse: collapse;
-}
-.tableContainer th {
-    background: var(--color-border);
-    color: white;
-    padding: 0.75rem;
-    text-align: left;
-}
-.tableContainer td {
-    padding: 0.75rem;
-    border-bottom: 1px solid #eee;
 }
