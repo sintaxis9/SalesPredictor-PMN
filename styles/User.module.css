@@ -59,3 +59,40 @@
     font-size: 1rem;
     color: var(--color-text);
 }
+
+.logoutButton {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 2rem auto 1rem;
+    padding: 1rem;
+    background: linear-gradient(
+        45deg,
+        var(--color-primary),
+        var(--color-primary-light)
+    );
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.logoutButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 138, 255, 0.3);
+}
+
+.backLink {
+    display: block;
+    text-align: center;
+    color: var(--color-primary);
+    font-weight: 500;
+    transition: color 0.2s;
+    margin-top: 1rem;
+}
+
+.backLink:hover {
+    color: var(--color-primary-light);
+}

@@ -3,14 +3,20 @@ import Layout from "../components/Layout";
 import styles from "../styles/User.module.css";
 import { useAuth } from "../contexts/AuthContext";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function UserProfile() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, logout } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
     if (!isAuthenticated) router.push("/auth");
   }, [isAuthenticated, router]);
+
+  const handleLogout = () => {
+    logout();
+    router.push("/");
+  };
 
   if (!isAuthenticated) return null;
 
@@ -19,7 +25,7 @@ export default function UserProfile() {
       <div className={styles.profileContainer}>
         <div className={styles.avatar}>
           <img
-            src="https://i.pravatar.cc/150?img=12"
+            src="https://i.pravatar.cc/150?img=68"
             alt="John Doe"
             className={styles.avatarImage}
           />
@@ -45,11 +51,19 @@ export default function UserProfile() {
             </div>
 
             <div className={styles.infoItem}>
-              <span className={styles.infoLabel}>Puesto:</span>
-              <span className={styles.infoValue}>Analista de Datos</span>
+              <span className={styles.infoLabel}>Último acceso:</span>
+              <span className={styles.infoValue}>Hoy</span>
             </div>
           </div>
         </div>
+
+        <button onClick={handleLogout} className={styles.logoutButton}>
+          Cerrar sesión
+        </button>
+
+        <Link href="/" className={styles.backLink}>
+          ← Volver al inicio
+        </Link>
       </div>
     </Layout>
   );
