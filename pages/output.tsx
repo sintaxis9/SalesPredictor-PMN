@@ -17,6 +17,7 @@ import {
 } from "chart.js";
 
 ChartJS.register(
+  PointElement,
   LineElement,
   PointElement,
   LinearScale,

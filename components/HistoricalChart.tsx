@@ -1,7 +1,8 @@
 import { Line } from "react-chartjs-2";
-import { ChartOptions } from "chart.js";
 import {
   Chart as ChartJS,
+  ChartOptions,
+  PointElement,
   LineElement,
   CategoryScale,
   LinearScale,
@@ -11,6 +12,7 @@ import {
 } from "chart.js";
 
 ChartJS.register(
+  PointElement,
   LineElement,
   CategoryScale,
   LinearScale,
@@ -47,7 +49,7 @@ export default function HistoricalChart({ data }: { data: any }) {
         color: "var(--color-primary)",
         font: {
           size: 16,
-          weight: "600",
+          weight: 600,
         },
       },
       legend: {
