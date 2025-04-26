@@ -1,18 +1,94 @@
-/* Agregar al final */
-.historicalContainer {
+.outputContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     padding: 2rem;
 }
 
-.chartsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.chart-container {
+.tableContainer {
     background: white;
     padding: 1.5rem;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    overflow-x: auto;
+}
+
+/* Corregido: Usar clase para la tabla */
+.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.dataTable th {
+    background: linear-gradient(
+        to right,
+        var(--color-primary),
+        var(--color-primary-light)
+    );
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    position: sticky;
+    left: 0;
+}
+
+.dataTable td {
+    padding: 1rem;
+    border-bottom: 2px solid var(--color-bg);
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.dataTable tr:hover td {
+    background-color: rgba(0, 138, 255, 0.05);
+}
+
+.chartContainer {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.chartTitle {
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.chartWrapper {
+    height: 400px;
+    position: relative;
+}
+
+/* Corregido: Usar clase padre */
+.dataTable th:first-child {
+    border-radius: var(--radius) 0 0 0;
+}
+
+.dataTable th:last-child {
+    border-radius: 0 var(--radius) 0 0;
+}
+
+.dataTable tr:last-child td {
+    border-bottom: none;
+}
+
+/* Scroll personalizado corregido */
+.tableContainer::-webkit-scrollbar {
+    height: 8px;
+    background-color: var(--color-bg);
+}
+
+.tableContainer::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: 4px;
 }

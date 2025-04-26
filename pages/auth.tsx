@@ -8,7 +8,10 @@ export default function AuthPage() {
 
   return (
     <Layout>
-      <div className={styles.formContainer}>
+      <div
+        className={styles.formContainer}
+        style={{ marginTop: "2rem", marginBottom: "2rem" }}
+      >
         <h2>{isRegister ? "Registro" : "Inicio de sesión"}</h2>
 
         {isRegister && (

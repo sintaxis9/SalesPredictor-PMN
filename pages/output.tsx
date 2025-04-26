@@ -42,21 +42,77 @@ const chartData = {
   labels: data.map((d) => d.fecha),
   datasets: [
     {
-      label: "Ventas",
+      label: "Ventas Diarias",
       data: data.map((d) => d.ventas),
-      fill: false,
-      borderColor: "var(--color-primary)",
-      backgroundColor: "var(--color-border)",
-      tension: 0.1,
+      fill: true,
+      borderColor: "var(--color-primary)", // #008aff
+      backgroundColor: (context: any) => {
+        const ctx = context.chart.ctx;
+        const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, "rgba(0, 138, 255, 0.15)"); // 15% de opacidad
+        gradient.addColorStop(1, "rgba(0, 138, 255, 0.01)");
+        return gradient;
+      },
+      tension: 0.1, // Reducimos la curvatura (0 = línea recta, 1 = máxima curvatura)
+      borderWidth: 2.5,
+      pointBackgroundColor: "white",
+      pointBorderColor: "var(--color-primary)",
+      pointBorderWidth: 2,
+      pointRadius: 4,
+      pointHoverRadius: 6,
     },
   ],
 };
 
 const chartOptions = {
   responsive: true,
+  maintainAspectRatio: false,
   plugins: {
-    legend: { position: "top" as const },
-    title: { display: true, text: "Ventas Diarias" },
+    legend: {
+      position: "top" as const,
+      labels: {
+        color: "var(--color-primary)",
+        font: {
+          size: 14,
+          weight: "600",
+        },
+      },
+    },
+    title: {
+      display: true,
+      text: "Predicción de Ventas",
+      color: "var(--color-primary)",
+      font: {
+        size: 18,
+        weight: "700",
+      },
+    },
+    tooltip: {
+      backgroundColor: "var(--color-primary)",
+      titleColor: "white",
+      bodyColor: "white",
+      borderColor: "rgba(255, 255, 255, 0.1)",
+      borderWidth: 1,
+      padding: 12,
+    },
+  },
+  scales: {
+    x: {
+      grid: {
+        color: "rgba(0, 0, 0, 0.05)",
+      },
+      ticks: {
+        color: "var(--color-text)",
+      },
+    },
+    y: {
+      grid: {
+        color: "rgba(0, 0, 0, 0.05)",
+      },
+      ticks: {
+        color: "var(--color-text)",
+      },
+    },
   },
 };
 
@@ -69,7 +125,7 @@ export default function OutputPage() {
     <Layout>
       <div className={styles.outputContainer}>
         <div className={styles.tableContainer}>
-          <table {...getTableProps()}>
+          <table {...getTableProps()} className={styles.dataTable}>
             <thead>
               {headerGroups.map((hg) => (
                 <tr {...hg.getHeaderGroupProps()} key={hg.id}>
@@ -97,8 +153,12 @@ export default function OutputPage() {
             </tbody>
           </table>
         </div>
+
         <div className={styles.chartContainer}>
-          <Line data={chartData} options={chartOptions} />
+          <h3 className={styles.chartTitle}>Tendencia Predictiva</h3>
+          <div className={styles.chartWrapper}>
+            <Line data={chartData} options={chartOptions} />
+          </div>
         </div>
       </div>
     </Layout>

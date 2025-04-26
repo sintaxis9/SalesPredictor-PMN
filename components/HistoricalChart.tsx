@@ -35,7 +35,16 @@ export default function HistoricalChart({ data }: { data: any }) {
   };
 
   return (
-    <div className="chart-container">
+    // Añadir en el return
+    <div
+      className="chart-container"
+      style={{
+        background: "white",
+        borderRadius: "var(--radius)",
+        boxShadow: "var(--shadow)",
+        padding: "1.5rem",
+      }}
+    >
       <Line data={chartData} options={options} />
     </div>
   );
