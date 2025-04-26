@@ -1,13 +1,24 @@
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import styles from "../styles/Form.module.css";
+import Loading from "../components/Loading";
 
 export default function DataEntry() {
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handlePredict = () => {
-    router.push("/output");
+    setIsLoading(true);
+    setTimeout(
+      () => {
+        router.push("/output");
+      },
+      3500 + Math.random() * 1500,
+    );
   };
+
+  if (isLoading) return <Loading />;
 
   return (
     <Layout>
@@ -23,8 +34,12 @@ export default function DataEntry() {
             placeholder="Ejemplo:\nfecha,ventas\n2025-04-01,120\n2025-04-02,150"
           />
         </div>
-        <button className={styles.button} onClick={handlePredict}>
-          Generar predicción
+        <button
+          className={styles.button}
+          onClick={handlePredict}
+          disabled={isLoading}
+        >
+          {isLoading ? "Procesando..." : "Generar predicción"}
         </button>
       </div>
     </Layout>
