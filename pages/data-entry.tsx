@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { useAuth } from "../contexts/AuthContext";
 import Layout from "../components/Layout";
 import styles from "../styles/Form.module.css";
 import Loading from "../components/Loading";
@@ -7,6 +8,13 @@ import Loading from "../components/Loading";
 export default function DataEntry() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const { isAuthenticated } = useAuth();
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push("/auth");
+    }
+  }, [isAuthenticated, router]);
 
   const handlePredict = () => {
     setIsLoading(true);
@@ -18,7 +26,7 @@ export default function DataEntry() {
     );
   };
 
-  if (isLoading) return <Loading />;
+  if (!isAuthenticated || isLoading) return <Loading />;
 
   return (
     <Layout>
