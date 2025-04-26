@@ -13,7 +13,6 @@
     overflow-x: auto;
 }
 
-/* Corregido: Usar clase para la tabla */
 .dataTable {
     width: 100%;
     border-collapse: collapse;
@@ -69,7 +68,6 @@
     position: relative;
 }
 
-/* Corregido: Usar clase padre */
 .dataTable th:first-child {
     border-radius: var(--radius) 0 0 0;
 }
@@ -82,7 +80,6 @@
     border-bottom: none;
 }
 
-/* Scroll personalizado corregido */
 .tableContainer::-webkit-scrollbar {
     height: 8px;
     background-color: var(--color-bg);

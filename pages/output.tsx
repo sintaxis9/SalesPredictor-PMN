@@ -13,6 +13,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  ChartOptions,
 } from "chart.js";
 
 ChartJS.register(
@@ -45,33 +46,32 @@ const chartData = {
       label: "Ventas Diarias",
       data: data.map((d) => d.ventas),
       fill: true,
-      borderColor: "var(--color-primary)", // #008aff
+      borderColor: "var(--color-primary)",
       backgroundColor: (context: any) => {
         const ctx = context.chart.ctx;
         const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-        gradient.addColorStop(0, "rgba(0, 138, 255, 0.15)"); // 15% de opacidad
+        gradient.addColorStop(0, "rgba(0, 138, 255, 0.2)");
         gradient.addColorStop(1, "rgba(0, 138, 255, 0.01)");
         return gradient;
       },
-      tension: 0.1, // Reducimos la curvatura (0 = línea recta, 1 = máxima curvatura)
-      borderWidth: 2.5,
+      tension: 0.2,
       pointBackgroundColor: "white",
       pointBorderColor: "var(--color-primary)",
-      pointBorderWidth: 2,
-      pointRadius: 4,
-      pointHoverRadius: 6,
-    },
+      pointBorderWidth: 1,
+      pointRadius: 5,
+      pointHoverRadius: 7,
+    } as any,
   ],
 };
 
-const chartOptions = {
+const chartOptions: ChartOptions<"line"> = {
   responsive: true,
   maintainAspectRatio: false,
   plugins: {
     legend: {
-      position: "top" as const,
+      position: "top",
       labels: {
-        color: "var(--color-primary)",
+        color: "var(--color-text)",
         font: {
           size: 14,
           weight: "600",
@@ -94,7 +94,7 @@ const chartOptions = {
       borderColor: "rgba(255, 255, 255, 0.1)",
       borderWidth: 1,
       padding: 12,
-    },
+    } as any,
   },
   scales: {
     x: {
