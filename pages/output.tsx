@@ -84,7 +84,7 @@ const chartOptions: ChartOptions<"line"> = {
       color: "var(--color-primary)",
       font: {
         size: 18,
-        weight: "700",
+        weight: 700,
       },
     },
     tooltip: {
