@@ -74,7 +74,7 @@ const chartOptions: ChartOptions<"line"> = {
         color: "var(--color-text)",
         font: {
           size: 14,
-          weight: "600",
+          weight: 600,
         },
       },
     },
