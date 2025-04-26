@@ -24,6 +24,9 @@ export default function Nav() {
             <Link href="/historical-charts" className={styles.navLink}>
               HISTORICAL CHARTS
             </Link>
+            <Link href="/user" className={styles.navLink}>
+              JOHN DOE
+            </Link>
           </>
         )}
       </div>
