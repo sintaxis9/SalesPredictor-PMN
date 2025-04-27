@@ -58,9 +58,9 @@ graph TD
 
 ## 🖼️ Capturas de Pantalla
 
-| ![Home](./assets/screenshots/home.png) | ![Output](./assets/screenshots/output.png) | ![Historical Charts](./assets/screenshots/historicalcharts.png) | [User](./assets/screenshots/user.png) |
+| ![Home](./assets/screenshots/home.png) | ![Output](./assets/screenshots/output.png) | ![Historical Charts](./assets/screenshots/historicalcharts.png) | ![User](./assets/screenshots/user.png) |
 |-----------------------------------------|--------------------------------------------|---------------------------------------------------------------|----------------------------------------|
-| *Vista principal (Home)*                | *Resultados de predicción (Output)*        | *Análisis histórico (Historical Charts)*                      | *Perfil de usuario (User)*
+| *Vista principal (Home)*                | *Resultados de predicción (Output)*        | *Análisis histórico (Historical Charts)*                      | *Perfil de usuario (User)*             |
 
 ---
 
