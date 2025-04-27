@@ -31,15 +31,15 @@ export default function DataEntry() {
   return (
     <Layout>
       <div className={styles.formContainer}>
-        <h2>Carga de datos predictivos</h2>
+        <h2>Upload Data Input</h2>
         <div className={styles.inputGroup}>
           <label className={styles.label}>
-            Datos históricos (CSV o manual)
+            Historical data (CSV or manual)
           </label>
           <textarea
             className={styles.input}
             rows={6}
-            placeholder="Ejemplo:\nfecha,ventas\n2025-04-01,120\n2025-04-02,150"
+            placeholder="Example:\ndate,sales\n2025-04-01,120\n2025-04-02,150"
           />
         </div>
         <button
@@ -47,7 +47,7 @@ export default function DataEntry() {
           onClick={handlePredict}
           disabled={isLoading}
         >
-          {isLoading ? "Procesando..." : "Generar predicción"}
+          {isLoading ? "Processing..." : "Generate prediction"}
         </button>
       </div>
     </Layout>

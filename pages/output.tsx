@@ -36,15 +36,15 @@ const data = [
 ];
 
 const columns: Column<(typeof data)[0]>[] = [
-  { Header: "Fecha", accessor: "fecha" },
-  { Header: "Ventas", accessor: "ventas" },
+  { Header: "Date", accessor: "fecha" },
+  { Header: "Sales", accessor: "ventas" },
 ];
 
 const chartData = {
   labels: data.map((d) => d.fecha),
   datasets: [
     {
-      label: "Ventas Diarias",
+      label: "Diary Sales",
       data: data.map((d) => d.ventas),
       fill: true,
       borderColor: "var(--color-primary)",
@@ -81,7 +81,7 @@ const chartOptions: ChartOptions<"line"> = {
     },
     title: {
       display: true,
-      text: "Predicción de Ventas",
+      text: "Sales Prediction",
       color: "var(--color-primary)",
       font: {
         size: 18,
@@ -156,7 +156,7 @@ export default function OutputPage() {
         </div>
 
         <div className={styles.chartContainer}>
-          <h3 className={styles.chartTitle}>Tendencia Predictiva</h3>
+          <h3 className={styles.chartTitle}>Predictive Trend</h3>
           <div className={styles.chartWrapper}>
             <Line data={chartData} options={chartOptions} />
           </div>

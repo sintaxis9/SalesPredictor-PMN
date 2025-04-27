@@ -15,9 +15,9 @@ export default function Home() {
     <Layout>
       <div className={styles.hero}>
         <h1 className={styles.title}>SalesPredictor</h1>
-        <p className={styles.subtitle}>Predicción inteligente de ventas</p>
+        <p className={styles.subtitle}>Smart Sales Prediction</p>
         <button onClick={handleAction} className={styles.ctaButton}>
-          {isAuthenticated ? "¿Desea cargar sus datos?" : "¡Regístrate!"}
+          {isAuthenticated ? "Upload Your Data?" : "¡Sign Up Now!"}
         </button>
       </div>
     </Layout>

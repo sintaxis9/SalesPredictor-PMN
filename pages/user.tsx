@@ -36,7 +36,7 @@ export default function UserProfile() {
 
           <div className={styles.infoGrid}>
             <div className={styles.infoItem}>
-              <span className={styles.infoLabel}>Empresa:</span>
+              <span className={styles.infoLabel}>Enterprise:</span>
               <span className={styles.infoValue}>example TM</span>
             </div>
 
@@ -46,23 +46,23 @@ export default function UserProfile() {
             </div>
 
             <div className={styles.infoItem}>
-              <span className={styles.infoLabel}>Miembro desde:</span>
-              <span className={styles.infoValue}>Enero 2024</span>
+              <span className={styles.infoLabel}>Member Since:</span>
+              <span className={styles.infoValue}>July 2022</span>
             </div>
 
             <div className={styles.infoItem}>
-              <span className={styles.infoLabel}>Último acceso:</span>
-              <span className={styles.infoValue}>Hoy</span>
+              <span className={styles.infoLabel}>Role:</span>
+              <span className={styles.infoValue}>Data Analyst</span>
             </div>
           </div>
         </div>
 
         <button onClick={handleLogout} className={styles.logoutButton}>
-          Cerrar sesión
+          Log Out
         </button>
 
         <Link href="/" className={styles.backLink}>
-          ← Volver al inicio
+          ← Bach to Home
         </Link>
       </div>
     </Layout>

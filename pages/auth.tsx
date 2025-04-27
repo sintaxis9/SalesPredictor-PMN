@@ -18,13 +18,13 @@ export default function AuthPage() {
   return (
     <Layout>
       <div className={styles.formContainer}>
-        <h2>{isRegister ? "Registro" : "Inicio de sesión"}</h2>
+        <h2>{isRegister ? "Register" : "Login"}</h2>
 
         <form onSubmit={handleSubmit}>
           {isRegister && (
             <div className={styles.inputGroup}>
               <label className={styles.label} htmlFor="name">
-                Nombre
+                Name
               </label>
               <input id="name" type="text" className={styles.input} />
             </div>
@@ -34,28 +34,28 @@ export default function AuthPage() {
             <label className={styles.label} htmlFor="email">
               Email
             </label>
-            <input id="email" type="email" className={styles.input} />
+            <input id="email" type="text" className={styles.input} />
           </div>
 
           <div className={styles.inputGroup}>
             <label className={styles.label} htmlFor="password">
-              Contraseña
+              Password
             </label>
             <input id="password" type="password" className={styles.input} />
           </div>
 
           <button className={styles.button} type="submit">
-            {isRegister ? "Registrarse" : "Iniciar sesión"}
+            {isRegister ? "Register" : "Login"}
           </button>
         </form>
 
         <p>
-          {isRegister ? "¿Ya tienes cuenta? " : "¿No tienes cuenta? "}
+          {isRegister ? "Already have an account? " : "Don't have an account? "}
           <button
             onClick={() => setIsRegister(!isRegister)}
             className={styles.toggleButton}
           >
-            {isRegister ? "Inicia sesión aquí" : "Regístrate aquí"}
+            {isRegister ? "Sign in here" : "Register here"}
           </button>
         </p>
       </div>

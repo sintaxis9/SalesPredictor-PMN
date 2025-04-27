@@ -7,18 +7,18 @@ import { useEffect } from "react";
 
 const historicalData = [
   {
-    title: "Predicción Q1 2024",
-    dates: ["Ene", "Feb", "Mar"],
+    title: "Q1 2024 Forecast",
+    dates: ["Jan", "Feb", "Mar"],
     sales: [200, 220, 240],
   },
   {
-    title: "Temporada alta 2023",
+    title: "2023 High Session",
     dates: ["Nov", "Dic"],
     sales: [350, 420],
   },
   {
-    title: "Promociones 2024",
-    dates: ["Abr", "May", "Jun"],
+    title: "2024 Promotions",
+    dates: ["Apr", "May", "Jun"],
     sales: [180, 210, 240],
   },
 ];
@@ -36,11 +36,11 @@ export default function HistoricalCharts() {
   return (
     <Layout>
       <div className={styles.historicalContainer}>
-        <h1 className={styles.header}>Historial de Predicciones</h1>
+        <h1 className={styles.header}>Prediction History</h1>
         <div className={styles.chartGrid}>
           {historicalData.map((data, index) => (
             <div key={index} className={styles.chartTablePair}>
-              {/* Tabla de datos */}
+              {}
               <table className={styles.dataTable}>
                 <thead>
                   <tr>
@@ -58,7 +58,7 @@ export default function HistoricalCharts() {
                 </tbody>
               </table>
 
-              {/* Gráfica */}
+              {}
               <div className={styles.chartWrapper}>
                 <HistoricalChart data={data} />
               </div>

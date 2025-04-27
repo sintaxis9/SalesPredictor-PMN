@@ -18,16 +18,14 @@ export default function Loading() {
         <div className={styles.orbit}></div>
         <div className={styles.planet}></div>
       </div>
-      <h2 className={styles.title}>Analizando patrones de ventas</h2>
+      <h2 className={styles.title}>Analyzing sales patterns</h2>
       <div className={styles.progressBar}>
         <div
           className={styles.progressFill}
           style={{ width: `${progress}%` }}
         ></div>
       </div>
-      <p className={styles.subtext}>
-        Este proceso puede tomar unos segundos...
-      </p>
+      <p className={styles.subtext}>This process may take a few seconds...</p>
     </div>
   );
 }
