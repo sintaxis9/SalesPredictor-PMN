@@ -25,9 +25,9 @@ SalesPredictor-PMN es una maqueta funcional (PMN) que simula un sistema completo
 
 ## 🖼️ Capturas de Pantalla
 
-| ![Login](https://via.placeholder.com/400x200/008aff/fff?text=Login+Moderno) | ![Dashboard](https://via.placeholder.com/400x200/00c2ff/fff?text=Dashboard+Analítico) |
-|------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| *Interfaz de autenticación*                                                  | *Visualización de datos predictivos*                                                  |
+| ![Home](./assets/screenshots/home.png) | ![Output](./assets/screenshots/output.png) | ![Historical Charts](./assets/screenshots/historicalcharts.png) |
+|-----------------------------------------|--------------------------------------------|---------------------------------------------------------------|
+| *Vista principal (Home)*                | *Resultados de predicción (Output)*        | *Análisis histórico (Historical Charts)*                      |
 
 ---
 
