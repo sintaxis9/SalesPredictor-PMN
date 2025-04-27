@@ -44,8 +44,16 @@ graph TD
     style D fill:#FF9800,stroke:#F57C00
     style G fill:#9C27B0,stroke:#7B1FA2
     style E fill:#009688,stroke:#00796B
-    style F fill:#E91E63,stroke:#C2185B```
+    style F fill:#E91E63,stroke:#C2185B
+```
 
+**Leyenda del Diagrama:**
+- 🟩 **Auth:** Pantalla de Login/Registro
+- 🟦 **Home:** Página principal
+- 🟧 **Data Entry:** Formulario de carga de datos
+- 🟪 **Output:** Resultados de predicción
+- 🟩 **Historical Charts:** Historial de análisis
+- 🟥 **User Profile:** Perfil de usuario
 ---
 
 ## 🖼️ Capturas de Pantalla
