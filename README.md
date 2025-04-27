@@ -3,6 +3,8 @@
 **Predictor de Ventas - Maqueta Funcional (PMN)**
 *Prototipo de demostración para análisis predictivo de ventas*
 
+🔗 **[Ver despliegue en vivo aquí](https://sales-predictor-86tcd1ndb-sintaxis-projects.vercel.app/)**
+
 ---
 
 ## 📌 Descripción
