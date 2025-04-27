@@ -17,11 +17,34 @@ SalesPredictor-PMN es una maqueta funcional (PMN) que simula un sistema completo
 - Base para personalizaciones específicas
 
 **Características clave:**
-✅ Autenticación simulada de usuarios
-✅ Carga de datos predictivos (CSV/manual)
+✅ Simulacion de autenticación de usuarios
+✅ Simulacion de carga de datos predictivos (CSV/manual)
 ✅ Gráficos interactivos con análisis temporal
 ✅ Dashboard con histórico de predicciones
-✅ Diseño responsive y moderno
+
+---
+
+## 🗺️ Boceto de Navegación
+
+```mermaid
+graph TD
+    A[Auth] -->|Login/Register| B{¿Autenticado?}
+    B -->|Sí| C[Home]
+    B -->|No| A
+    C -->|Navbar| D[Data Entry]
+    C -->|Navbar| E[Historical Charts]
+    C -->|Navbar| F[User Profile]
+    D -->|Generar Predicción| G[Output]
+    F -->|Logout| A
+    G -->|Navbar| C
+    E -->|Navbar| C
+
+    style A fill:#4CAF50,stroke:#388E3C
+    style C fill:#2196F3,stroke:#1976D2
+    style D fill:#FF9800,stroke:#F57C00
+    style G fill:#9C27B0,stroke:#7B1FA2
+    style E fill:#009688,stroke:#00796B
+    style F fill:#E91E63,stroke:#C2185B
 
 ---
 
