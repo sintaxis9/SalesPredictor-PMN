@@ -48,3 +48,131 @@
         0 5px 15px rgba(0, 138, 255, 0.3),
         0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.section {
+    padding: 6rem 2rem;
+}
+
+.section:nth-child(even) {
+    background: #f8fafd;
+}
+
+.sectionContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.imageContainer {
+    flex: 1;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.sectionImage {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.textContent {
+    flex: 1;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.sectionText {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+    .sectionContent {
+        flex-direction: column;
+    }
+
+    .reverse {
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+}
+
+.techStack {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.techBadge {
+    background: rgba(0, 138, 255, 0.1);
+    color: var(--color-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid var(--color-border);
+}
+
+.companiesGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.companyLogo {
+    padding: 1rem;
+    background: white;
+    border-radius: var(--radius);
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-primary);
+    box-shadow: var(--shadow);
+}
+
+.trustMetrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.metricItem {
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.metricItem h3 {
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .companiesGrid,
+    .trustMetrics {
+        grid-template-columns: 1fr;
+    }
+
+    .techStack {
+        justify-content: center;
+    }
+}
