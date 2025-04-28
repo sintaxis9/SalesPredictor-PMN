@@ -8,7 +8,7 @@
 ![React](https://img.shields.io/badge/React-18.2.0-blue?style=flat&logo=react)
 ![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=flat&logo=vercel)
 
-🔗 **[Ver despliegue en vivo aquí](https://sales-predictor-86tcd1ndb-sintaxis-projects.vercel.app/)**
+🔗 **[Ver despliegue en vivo aquí](https://sales-predictor-pmn.vercel.app/)**
 
 ---
 
