@@ -3,6 +3,11 @@
 **Predictor de Ventas - Maqueta Funcional (PMN)**
 *Prototipo de demostración para análisis predictivo de ventas*
 
+![Tech Stack](https://img.shields.io/badge/Next.js-14.2.3-black?style=flat&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0.4-blue?style=flat&logo=typescript)
+![React](https://img.shields.io/badge/React-18.2.0-blue?style=flat&logo=react)
+![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=flat&logo=vercel)
+
 🔗 **[Ver despliegue en vivo aquí](https://sales-predictor-86tcd1ndb-sintaxis-projects.vercel.app/)**
 
 ---
@@ -21,6 +26,48 @@ SalesPredictor-PMN es una maqueta funcional (PMN) que simula un sistema completo
 ✅ Simulacion de carga de datos predictivos (CSV/manual)
 ✅ Gráficos interactivos con análisis temporal
 ✅ Dashboard con histórico de predicciones
+
+---
+
+```bash
+SalesPredictor-PMN/
+├── components/
+│   ├── Footer.tsx
+│   ├── Form.tsx
+│   ├── HistoricalChart.tsx
+│   ├── Layout.tsx
+│   ├── Loading.tsx
+│   └── Nav.tsx
+├── contexts/
+│   └── AuthContext.tsx
+├── pages/
+│   ├── _app.tsx
+│   ├── auth.tsx
+│   ├── data-entry.tsx
+│   ├── historical-charts.tsx
+│   ├── index.tsx
+│   ├── output.tsx
+│   └── user.tsx
+├── public/
+│   └── assets/
+│       ├── analytics.jpg
+│       ├── growth.jpg
+│       └── screenshots/
+├── styles/
+│   ├── Footer.module.css
+│   ├── Form.module.css
+│   ├── globals.css
+│   ├── HistoricalCharts.module.css
+│   ├── Home.module.css
+│   ├── Layout.module.css
+│   ├── Loading.module.css
+│   ├── Nav.module.css
+│   ├── Output.module.css
+│   └── User.module.css
+├── next.config.js
+├── tsconfig.json
+├── package.json
+└── vercel.json
 
 ---
 
