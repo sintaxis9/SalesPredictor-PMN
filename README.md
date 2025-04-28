@@ -29,6 +29,8 @@ SalesPredictor-PMN es una maqueta funcional (PMN) que simula un sistema completo
 
 ---
 
+## 🏗️ Estructura del Proyecto
+
 ```bash
 SalesPredictor-PMN/
 ├── components/
